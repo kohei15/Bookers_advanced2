@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+<<<<<<< HEAD
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	protected
@@ -7,4 +8,6 @@ class ApplicationController < ActionController::Base
 		devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
 		devise_parameter_sanitizer.permit(:account_update, keys: [:name])
 	end
+=======
+>>>>>>> origin/master
 end

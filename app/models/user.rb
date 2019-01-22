@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+<<<<<<< HEAD
   validates :name, presence: true, uniqueness: true, length: { minimum: 5, maximum: 20 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
@@ -18,4 +19,8 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
   has_many :post_images, dependent: :destroy
+=======
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+>>>>>>> origin/master
 end
