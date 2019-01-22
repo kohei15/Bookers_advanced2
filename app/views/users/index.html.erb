@@ -1,0 +1,25 @@
+<!-- 「_userinfo.html.erb」の呼び出し -->
+<div class="col-xs-3">
+<%= render 'layouts/userinfo', books: @books , user: current_user %>
+<%= render 'layouts/newbook', book: @book %>
+</div>
+<div class="col-xs-9">
+	<table class="table table-hover table-inverse">
+		<thead>
+			<tr>
+				<th>image</th>
+				<th>name</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+		  <% @users.each do |user| %>
+			<tr>
+				<td><%= attachment_image_tag user, :image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %></td>
+				<td><%= user.name %></td>
+				<td><%= link_to 'show', user_path(user.id), class: "user_#{user.id}" %></td>
+			</tr>
+		  <% end %>
+		</tbody>
+	</table>
+</div>

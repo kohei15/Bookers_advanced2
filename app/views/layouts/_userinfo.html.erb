@@ -1,0 +1,22 @@
+<% if flash[:notice] %>
+	<p style="color: green"><%= flash[:notice] %></p>
+<% end %>
+<h2>User info</h2>
+<%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
+<table class='table'>
+	<tr>
+		<th>name</th>
+		<th><%= user.name %></th>
+	</tr>
+	<tr>
+		<th>introduction</th>
+		<th><%= user.introduction %></th>
+	</tr>
+</table>
+
+
+<% if current_user.id == user.id %>
+  <div class="row">
+	<%= link_to "", edit_user_path(current_user.id) ,class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench edit_user_#{user.id}" %>
+</div>
+<% end %>

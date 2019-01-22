@@ -1,0 +1,20 @@
+<p id="notice"></p>
+<h2>User info</h2>
+<%= form_for(@user) do |f| %>
+	<div class="field">
+		<label for="name">Name</label>
+		<%= f.text_field :name, autofocus: true, class:"name", id:"name" %>
+	</div>
+
+	<div class="field">
+		<label">Image</label>
+		<%= f.attachment_field :image, class: "user_image", fallback: "no_image.jpg"%>
+	</div>
+
+	<div class="field">
+		<label for="introduction">Introduction</label>
+		<%= f.text_area :introduction, autofocus: true, class:"introduction", id:"introduction" %>
+	</div>
+
+	<%= f.submit "Update User" %>
+<% end %>
