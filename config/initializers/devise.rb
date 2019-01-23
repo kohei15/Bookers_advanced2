@@ -11,10 +11,6 @@ Devise.setup do |config|
 <<<<<<< HEAD
   # config.secret_key = 'd99c74f5af3e4946602a288ae298412337ec06836ace9f8fa7e6a3cca0bc83af636fd2092e653af56769d78dbc4547737a5a6af684b377e4c7f6decc5efb2919'
 
-=======
-  # config.secret_key = 'f8e9337dc6883854939852a91877f10008b8e45398dfdd385fa3b60fe683df54f36ff300f12ee9e1fd8109888779460d4310b6db6c53295816a94561adfdacad'
-  
->>>>>>> origin/master
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -47,9 +43,6 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
 <<<<<<< HEAD
   config.authentication_keys = [:name]
-=======
-  # config.authentication_keys = [:email]
->>>>>>> origin/master
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -125,9 +118,6 @@ Devise.setup do |config|
   # Set up a pepper to generate the hashed password.
 <<<<<<< HEAD
   # config.pepper = '699a133656b8384b26cf2c02c53f5b00445a4632765a6908ded9bef1ac1c7ca104a9077d952238448d84125c009e4a66d9fd26d378cd835cadf34c754ca758cb'
-=======
-  # config.pepper = '2be4f0da9acf934f835c98399852c234a15403df4f1d4083dec5357d3333a6c3cffc8c248e1c81210cc82d0359318d38ec805452d5e3748706335ccb9dcaee69'
->>>>>>> origin/master
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false

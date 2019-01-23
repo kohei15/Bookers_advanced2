@@ -19,8 +19,4 @@ class User < ApplicationRecord
 
   has_many :books, dependent: :destroy
   has_many :post_images, dependent: :destroy
-=======
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
->>>>>>> origin/master
 end
