@@ -63,7 +63,7 @@ class BooksController < ApplicationController
 
 	def correct_user
      book = Book.find(params[:id])
-     # belong_toのおかげでnoteオブジェクトからuserオブジェクトへアクセスできる。
+     # belong_toのおかげでbookブジェクトからuserオブジェクトへアクセスできる。
      if current_user.id != book.user.id
        redirect_to root_path
      end
