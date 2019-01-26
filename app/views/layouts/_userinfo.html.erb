@@ -1,6 +1,17 @@
 <% if flash[:notice] %>
 	<p style="color: green"><%= flash[:notice] %></p>
 <% end %>
+<p id="notice"><%= @alert %></p>
+<!-- エラーメッセージの表示 -->
+<% if user.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <h2>User info</h2>
 <%= attachment_image_tag user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg", size: "100x100" %>
 <table class='table'>

@@ -5,10 +5,10 @@ class BooksController < ApplicationController
 	# before_action :validate_user, only: [:show, :edit, :update, :destroy]
 
 	def show
-		@book = Book.find(params[:id])
-		@books = Book.new
+		@books = Book.find(params[:id])
+		@book = Book.new
 		# @user = User.find(params[:id])
-		@user = @book.user
+		@user = @books.user
 	end
 
 	def index
@@ -39,7 +39,9 @@ class BooksController < ApplicationController
 			flash[:notice] = "Book was successfully updated."
 			redirect_to @book
 		else
-			render :edit, alert: "error"
+			# render :edit, alert: "error"
+	        @alert = "error"
+	        render :edit
 		end
 	end
 
@@ -48,7 +50,9 @@ class BooksController < ApplicationController
 			flash[:notice] = "successfully destroy"
 			redirect_to root_path
 		else
-			redirect_to root_path, alert: "error"
+			# redirect_to root_path, alert: "error"
+			@alert = "error"
+	        render :root
 		end
 	end
 

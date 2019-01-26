@@ -1,7 +1,7 @@
 <!-- 「_userinfo.html.erb」の呼び出し -->
 <div class="col-xs-3">
 <%= render 'layouts/userinfo', user: @user %>
-<%= render 'layouts/newbook', book: @book %>
+<%= render 'layouts/newbook', book: @book ,books: @books %>
 </div>
 <div class="col-xs-9">
 	<h2>Books（マイページ）</h2>

@@ -1,7 +1,7 @@
 <!-- 「_userinfo.html.erb」の呼び出し -->
 <div class="col-xs-3">
 <%= render 'layouts/userinfo', user: @user %>
-<%= render 'layouts/newbook', book: @book %>
+<%= render 'layouts/newbook', book: @book, books: @books %>
 </div>
 <div class="col-xs-9">
 	<h2>Book detail(/books/id)</h2>
@@ -15,8 +15,10 @@
 				</td>
 				<td><%= @book.title %></td>
 				<td><%= @book.body %></td>
-				<td><%= link_to 'Edit', edit_book_path(@book.id), class: "btn-sm btn-success edit_#{@book.id}" %></td>
-				<td><%= link_to "Destroy", book_path(@book.id),class: "btn-sm btn-danger destroy_#{@book.id}", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+			<% if current_user.id == @user.id %>
+				<td><%= link_to 'Edit', edit_book_path(@books.id), class: "btn-sm btn-success edit_#{@book.id}" %></td>
+				<td><%= link_to "Destroy", book_path(@books.id),class: "btn-sm btn-danger destroy_#{@book.id}", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
+			<% end %>
 			</tr>
 		</tbody>
 	</table>
