@@ -26,7 +26,9 @@ class BooksController < ApplicationController
 		else
 			@books = Book.all
 			@user = current_user
-			render :index, alert: "error"
+			flash[:notice] = "error"
+			render :index
+			# render :index, alert: "error"
 		end
 	end
 

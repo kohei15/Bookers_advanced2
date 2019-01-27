@@ -13,8 +13,8 @@
 					<%= attachment_image_tag @user, :image, format: 'jpeg', fallback: "no_image.jpg", size: "40x40" %>
 					<% end %>
 				</td>
-				<td><%= @book.title %></td>
-				<td><%= @book.body %></td>
+				<td><%= @books.title %></td>
+				<td><%= @books.body %></td>
 			<% if current_user.id == @user.id %>
 				<td><%= link_to 'Edit', edit_book_path(@books.id), class: "btn-sm btn-success edit_#{@book.id}" %></td>
 				<td><%= link_to "Destroy", book_path(@books.id),class: "btn-sm btn-danger destroy_#{@book.id}", method: :delete, "data-confirm" => "本当に消しますか？" %></td>
