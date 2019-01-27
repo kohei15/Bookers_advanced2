@@ -5,9 +5,8 @@ class BooksController < ApplicationController
 	# before_action :validate_user, only: [:show, :edit, :update, :destroy]
 
 	def show
-		@books = Book.find(params[:id])
+		# @books = Book.find(params[:id])
 		@book = Book.new
-		# @user = User.find(params[:id])
 		@user = @books.user
 	end
 
@@ -60,7 +59,7 @@ class BooksController < ApplicationController
 
 	private
 	def find_book
-		@book = Book.find(params[:id])
+		@books = Book.find(params[:id])
 	end
 
 	def book_params
